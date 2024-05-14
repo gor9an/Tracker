@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,8 @@ class TabBarController: UITabBarController {
             selectedImage: nil
         )
         
+        let trackerNavigationController = TrackersNavigationController(rootViewController: trackersViewController)
+        
         let statsViewController = StatsViewController()
         statsViewController.tabBarItem = UITabBarItem(
             title: "Статистика",
@@ -26,6 +28,6 @@ class TabBarController: UITabBarController {
             selectedImage: UIImage(named: "StatsTB")
         )
         
-        self.viewControllers = [trackersViewController, statsViewController]
+        self.viewControllers = [trackerNavigationController, statsViewController]
     }
 }
