@@ -29,13 +29,7 @@ final class TrackersNavigationController: UINavigationController {
     }
     
     // MARK: Functions
-    
-    @objc
-    func didAddTrackerButtonTapped() {
-        delegateTracker?.didAddTrackerButtonTapped()
-    }
-    
-    func configureViews() {
+    private func configureViews() {
         createButtons()
         configureDatePicker()
         configureLabels()
@@ -43,13 +37,13 @@ final class TrackersNavigationController: UINavigationController {
         setupNavBar()
     }
     
-    func setupNavBar() {
+    private func setupNavBar() {
         delegateTracker?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addTrackerButton)
         delegateTracker?.navigationItem.searchController = searchController
         delegateTracker?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: datePicker)
     }
     
-    func createButtons() {
+    private func createButtons() {
         addTrackerButton = UIButton.systemButton(
             with: UIImage(named: "AddTracker")!,
             target: self,
@@ -59,7 +53,7 @@ final class TrackersNavigationController: UINavigationController {
 
     }
     
-    func configureDatePicker() {
+    private func configureDatePicker() {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.widthAnchor.constraint(equalToConstant: 120).isActive = true
         datePicker.preferredDatePickerStyle = .compact
@@ -67,16 +61,28 @@ final class TrackersNavigationController: UINavigationController {
         datePicker.datePickerMode = .date
         let date = Date()
         datePicker.setDate(date, animated: false)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
     }
     
-    func configureLabels() {
+    private func configureLabels() {
         delegateTracker?.navigationItem.titleView?.tintColor = .cBlack
         delegateTracker?.navigationController?.navigationBar.prefersLargeTitles = true
         delegateTracker?.navigationItem.title = "Трекеры"
     }
     
-    func configureSearchField() {
+    private func configureSearchField() {
         searchController.searchBar.placeholder = "Поиск"
         searchController.searchBar.setValue("Отменить", forKey: "cancelButtonText")
+    }
+    
+    @objc
+    private func didAddTrackerButtonTapped() {
+        delegateTracker?.didAddTrackerButtonTapped()
+    }
+    
+    @objc
+    private func datePickerValueChanged(_ sender: UIDatePicker) {
+        delegateTracker?.dateWasChanged(date: sender.date)
+        //
     }
 }
