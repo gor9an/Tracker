@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03D33DE2BFEA00F007CDFF1 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D33DD2BFEA00F007CDFF1 /* Tracker.swift */; };
+		B03D33E02BFEA026007CDFF1 /* TrackerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D33DF2BFEA026007CDFF1 /* TrackerCategory.swift */; };
+		B03D33E22BFEA031007CDFF1 /* TrackerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D33E12BFEA031007CDFF1 /* TrackerRecord.swift */; };
 		B08AA0882BE00E54002A32D2 /* TrackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AA0872BE00E54002A32D2 /* TrackersViewController.swift */; };
 		B08AA08A2BE00EA4002A32D2 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AA0892BE00EA4002A32D2 /* StatsViewController.swift */; };
 		B08AA0902BE00FFB002A32D2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AA08F2BE00FFB002A32D2 /* UIView+Extensions.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B03D33DD2BFEA00F007CDFF1 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		B03D33DF2BFEA026007CDFF1 /* TrackerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerCategory.swift; sourceTree = "<group>"; };
+		B03D33E12BFEA031007CDFF1 /* TrackerRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerRecord.swift; sourceTree = "<group>"; };
 		B08AA0872BE00E54002A32D2 /* TrackersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackersViewController.swift; sourceTree = "<group>"; };
 		B08AA0892BE00EA4002A32D2 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B08AA08F2BE00FFB002A32D2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -51,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B03D33DC2BFEA000007CDFF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B03D33DD2BFEA00F007CDFF1 /* Tracker.swift */,
+				B03D33DF2BFEA026007CDFF1 /* TrackerCategory.swift */,
+				B03D33E12BFEA031007CDFF1 /* TrackerRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B08AA08D2BE00F3A002A32D2 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +79,7 @@
 		B08AA08E2BE00F48002A32D2 /* Trackers */ = {
 			isa = PBXGroup;
 			children = (
+				B03D33DC2BFEA000007CDFF1 /* Models */,
 				B0A05CFA2BF363C000D1CE0C /* Protocols */,
 				B08AA0872BE00E54002A32D2 /* TrackersViewController.swift */,
 				B08AA0B52BE8D022002A32D2 /* TrackersPresenter.swift */,
@@ -190,10 +207,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03D33DE2BFEA00F007CDFF1 /* Tracker.swift in Sources */,
 				B08AA0902BE00FFB002A32D2 /* UIView+Extensions.swift in Sources */,
 				B08AA0882BE00E54002A32D2 /* TrackersViewController.swift in Sources */,
+				B03D33E22BFEA031007CDFF1 /* TrackerRecord.swift in Sources */,
 				B08AA0B62BE8D022002A32D2 /* TrackersPresenter.swift in Sources */,
 				B0A05CFC2BF3641900D1CE0C /* TrackersNavigationControllerDelegate.swift in Sources */,
+				B03D33E02BFEA026007CDFF1 /* TrackerCategory.swift in Sources */,
 				B0A9FA5D2BDA6C2F001DA258 /* AppDelegate.swift in Sources */,
 				B08AA0942BE84CC8002A32D2 /* TabBarController.swift in Sources */,
 				B08AA08A2BE00EA4002A32D2 /* StatsViewController.swift in Sources */,
