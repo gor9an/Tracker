@@ -10,10 +10,15 @@ import UIKit
 final class TrackersViewController: UIViewController {
     private let stubLabel = UILabel()
     private let stubImageView = UIImageView()
+//    TODO:
+    private var categories: [TrackerCategory]?
+    var completedTrackers: [TrackerRecord]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cWhite
+        categories = [TrackerCategory]()
+        completedTrackers = [TrackerRecord]()
         setupStubs()
     }
     
@@ -38,13 +43,14 @@ final class TrackersViewController: UIViewController {
     
     private func configureStubImageView() {
         stubImageView.translatesAutoresizingMaskIntoConstraints = false
-        stubImageView.image = UIImage(named: "StubStar")
+        stubImageView.image = UIImage(named: "stubStar")
         stubImageView.tintColor = .cGray
     }
     
     private func configureStubLabel() {
         stubLabel.translatesAutoresizingMaskIntoConstraints = false
         stubLabel.text = "Что будем отслеживать?"
+        stubLabel.font = .systemFont(ofSize: 12, weight: .medium)
         stubLabel.tintColor = .cBlack
     }
 }
@@ -55,6 +61,8 @@ extension TrackersViewController: TrackersNavigationControllerDelegate {
     }
     
     func didAddTrackerButtonTapped() {
-        //TODO
+        let createTrackerVC = CreateTrackerViewController()
+        createTrackerVC.modalPresentationStyle = .popover
+        present(createTrackerVC, animated: true)
     }
 }
