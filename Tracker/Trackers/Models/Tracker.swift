@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Tracker {
+    let id: String
+    let title: String
+    let color: String
+    let emoji: String
+//    let schedule: [Date]
+}
